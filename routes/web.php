@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/carritos', function(){
-    return view('carritos');
+Route::get('/carrito', function(){
+    return view('carrito');
 })
