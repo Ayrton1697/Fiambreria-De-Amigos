@@ -1,0 +1,29 @@
+//@import "abstracts/functions";
+@import "abstracts/_mixins.scss";
+@import "abstracts/variables";
+
+@import "base/_base.scss";
+//@import "base/animations";
+@import "base/typography";
+@import "base/_utilies.scss";
+
+@import "components/_button.scss";
+@import "components/_slider.scss";
+@import "components/_card-oferta.scss";
+@import "components/popup";
+@import "components/form";
+//@import "components/bg-video";
+@import "components/_composition.scss";
+//@import "components/feature-box";
+@import "components/_card.scss";
+@import "components/_card-tienda.scss";
+//@import "components/story";
+
+@import "layouts/header";
+@import "layouts/_grid.scss";
+@import "layouts/footer";
+@import "layouts/_navigation.scss";
+@import "pages/_home.scss";
+@import "pages/_picadas.scss";
+@import "pages/_carrito.scss";
+@import "pages/_contacto.scss";

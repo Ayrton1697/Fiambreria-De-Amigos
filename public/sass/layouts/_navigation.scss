@@ -1,0 +1,195 @@
+.navigation{
+
+    &__checkbox{
+        display: none;
+    }
+    &__button{
+        display: none;
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        text-align: center;
+        cursor: pointer;
+
+        @include respond(tab-port){
+            top: 4rem;
+            right: 4rem;
+            display: block;
+        }
+        @include respond(phone){
+            top: 3rem;
+            right: 3rem;
+        }
+    }
+    &__background{
+        display: none;
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        background-image:radial-gradient($color-primary-light, $color-primary-dark);
+        z-index: 1000;
+        transition: transform .8s;
+
+        @include respond(tab-port){
+            top: 4.5rem;
+            right: 4.5rem;
+            display: block;
+        }
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+        }
+    }
+
+    &-nav{
+        text-transform: uppercase;
+        background-color: #dac3c3;
+        text-align: center;
+        margin: 0 auto;
+        transition:  .3s;
+
+        @include respond(tab-port){
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+    }
+    &__list{
+
+        transition: 1s;
+     list-style: none;
+     @include respond(tab-port){
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         z-index: 10000000000;
+         transform: translateY(-50%);
+    }
+}
+    &__item{
+        
+        padding: 2rem;
+        margin: 0 1rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+        cursor: pointer;
+
+        &:hover{
+         
+            background-color: #dfb3b3;
+        }
+        &:hover .navigation__link{
+            color: #9d2929;
+        }
+
+        &--right{
+            float: right;
+            padding: .7rem;
+            margin-right: 10rem;
+            position: relative;
+
+            .cart__qty{
+                font-size: 1.3rem;
+                background-color: #a77272;
+                border-radius: 9rem;
+                color: white;
+                position: absolute;
+                width: 56%;
+                top: 5px;
+                right: 0;
+
+
+                @include respond(tab-port){
+                    right: 30%;
+                    top: 0%;
+                    width: 18%;
+                }
+            }
+
+            @include respond(tab-port){
+                padding: 0;
+                float: none;
+            }
+        }
+
+        @include respond(tab-port){
+            display:block;
+            transition: all .2s;
+            cursor: pointer;
+            /* display: none; */
+            transform: translate(-50%,-50%)
+        }
+    }
+    
+ 
+    &__link{
+        color: #865959;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        @include respond(tab-port){
+            font-size: 2.5rem;
+        }
+    }
+    &__cart{
+        font-size: 3rem;
+       
+    }
+
+    
+    &__checkbox:checked ~ &__background{
+        transform: scale(80);
+    }
+    
+    &__checkbox:checked ~ &-nav{
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        display: contents;
+    }
+    &__checkbox:checked ~ &__list{
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        display: contents;
+    }
+
+    &__icon{
+        position: relative;
+        margin-top: 3.5rem;
+        
+        &,&::before,&::after{
+            display: inline-block;
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            transition: all .2s;
+        }
+
+        &::before,&::after{
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::before{
+            top: -.8rem;
+        }
+        &::after{
+            top: .8rem;
+        }
+    }
+
+   
+
+}

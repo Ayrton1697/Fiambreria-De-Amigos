@@ -1,0 +1,161 @@
+.section-carrito{
+    padding: 15rem 5rem;
+   // background-color: $color-primary-dark;
+   background-color: white;
+}
+
+.carrito-item{
+    background-color: #dbb482;
+    border-radius: 3px;
+    display: block;
+    width: 60%;
+    color: white !important;
+    font-size: 1.6rem;
+    height: 15.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+
+    @include respond(tab-port){
+        width: 100%;
+    }
+
+    @include respond(phone){
+        width: 100%;
+        margin: 0 0 0 1 auto;
+    }
+
+    &__text{
+       display: inline;
+        position: absolute;
+        top: 50%;
+        min-width: 33%;
+        width: 50%;
+        transform: translateY(-50%);
+        padding: 2rem;
+
+        @include respond(phone){
+            padding: 0.5rem;
+        }
+    }
+    &__name{
+        display: inline;
+      
+     
+    }
+    &__image{
+        width: 100%;
+       max-width: 24rem;
+       max-height: 17rem;
+        height: 100%;
+        @include respond(phone){
+            width: 40%;
+            max-width: 50%;
+            height: 100%;
+        }
+     
+    }
+    &__precio{
+        display: inline;
+        padding-left: 10rem;
+
+        @include respond(phone){
+            padding-left: 7rem;
+        }
+   
+    }
+    &__cantidad{
+        display: inline;
+       
+    }
+
+
+}
+
+.btn--delete{
+    
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        margin: 0;
+        cursor: pointer;
+        transition: all .2s;
+        position: relative;
+        position: absolute;
+     
+        
+      
+        // @include respond(tab-port){
+        //     top: -172%;
+        //     right: -65%;
+        // }
+        // @include respond(phone){
+        //     top: -167%;
+        //     right: 0%;
+        // }
+
+    
+    
+    
+
+}
+
+.btn--carrito{
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    font-size: 3rem;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    margin-left: 3rem;
+
+        &-more{
+            margin: 0;
+            left: 70%;
+        }
+        &-less{
+            margin: 0;
+            left: 100%;
+        }
+}
+
+.carrito__box{
+    
+    
+   
+    &--name{
+        width: 33%;
+
+        @include respond(tab-port){
+            max-width: 45%;
+        }
+    }
+    &--buttons{
+    //     width: 33%;
+    //   position: absolute;
+    //   right: 0;
+    }
+    &--qty{
+       width: 27%;
+       position: absolute;
+       top: 27%;
+       left: 60%;
+
+       @include respond(tab-port){
+        width: 18%;
+        position: absolute;
+        top: 3px;
+        left: 62%;
+       }
+    }
+    &--delete{
+
+        position: absolute;
+        right: 0;
+        top: 0;
+     
+    }
+}

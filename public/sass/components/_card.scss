@@ -1,0 +1,66 @@
+.card{
+    background-color: #ffffff;
+    padding: 0rem 0rem 3rem 0rem;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.3rem;
+    box-shadow: 0 3rem 4rem rgba(black, 0.1);
+    text-align: center;
+    transition: all .2s;
+
+
+    @include respond(tab-port){
+        padding: 0rem 0rem 6rem 0rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    @include respond(phone){
+        font-size: 2.6rem;
+        margin: 0 auto;
+        width: 90%;
+    }
+    @include respond(xs-phone){
+        width: 85%;
+    }
+
+
+    &__shape{
+        height: 30rem;
+        width: 34rem;
+        background-color: blue;
+        position: relative;
+        overflow: hidden;
+        
+    
+        @include respond(tab-port){
+           width: 100%;
+           height: 33rem;
+        }
+        @include respond(phone){
+            height: 40rem;
+            width: 100%;
+        }
+    }
+
+    &__text{
+        @include respond(phone){
+            padding: 0rem 3rem 0rem 3rem; 
+        }
+       
+    }
+    &__pricing{
+
+
+    }
+
+    &__image{
+        height: 100%;
+        min-width: 100%;;
+
+
+    }
+    &:hover{
+        transform: scale(1.05);
+    }
+}

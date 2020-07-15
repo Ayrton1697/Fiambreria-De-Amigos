@@ -1,0 +1,135 @@
+.oferta{
+
+    position: relative;
+
+    .card-oferta{
+    
+        height: 40rem;
+        width: 100%;
+        transition: all .2s;
+       margin: 0 auto;
+       -webkit-appearance: none;
+       
+    &--1{
+        
+        position: relative;
+        }
+
+
+    &--2{
+        position: absolute;
+        top:70rem;
+
+     
+        @include respond(tab-land){
+
+        }
+        @include respond(tab-port){
+            top: 10rem;
+        }
+        @include respond(phone){
+            top: 10rem;
+        }
+        @include respond(xs-phone){
+            top: 10rem;
+        }
+        
+    }
+
+    &__picture{
+
+        background-size: cover;
+        height: 35rem;
+        background-blend-mode: screen;
+        -webkit-appearance: none;
+
+
+        &--1{
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            -webkit-clip-path:polygon(0 0, 100% 0,100% 85%, 0 100%);
+            clip-path:polygon(0 0, 100% 0,100% 85%, 0 100%);
+            border-top-left-radius: 3px;
+    
+            background-image: linear-gradient(
+                to right bottom, rgb(214, 116, 140), rgb(97, 88, 88)),
+            url(../images/picada1.jpg);
+            -webkit-appearance: none;
+        }
+
+        &--2{
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            -webkit-clip-path:polygon(0 0, 100% 0,100% 85%, 0 100%);
+            clip-path:polygon(0 0, 100% 0,100% 100%, 0 85%);
+            border-top-left-radius: 3px;
+            -webkit-appearance: none;
+            background-image: linear-gradient(
+                to right bottom, rgb(207, 145, 169), rgb(97, 88, 88)),
+            url(../images/picada2.jpg);
+            
+            @include respond(tab-port){
+                clip-path:polygon(0 0, 100% 0,100% 100%, 0 83%);
+              
+            }
+            @include respond(phone){
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+            }
+           
+
+        }
+
+        &--3{
+
+        }
+
+    }
+
+    &__heading{
+
+        font-size: 2.8rem;
+        color: white;
+        text-transform: uppercase;
+        text-align: right;
+        font-weight: 300;
+        position: absolute;
+        top:12rem;
+        right:2rem;
+        width: 75%;
+        -webkit-appearance: none;
+
+    }
+
+    &__heading-span{
+        padding: .7rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        -webkit-appearance: none;
+        &--1{
+
+        
+            background-image: linear-gradient(to right bottom, 
+            rgba(rgb(163, 47, 53), 0.85),
+            rgba(black, 0.2));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, 
+            rgba(rgb(219, 111, 147), 0.85),
+            rgba(black, 0.2));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, 
+            rgba(rgb(194, 98, 122), 0.85),
+            rgba(black, 0.2));
+        }
+    }
+
+    &:hover{
+        transform: scale(1.07);
+
+        @include respond(phone){
+            transform: scale(1);
+        }
+    }
+}
+}
