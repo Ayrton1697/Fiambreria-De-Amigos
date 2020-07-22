@@ -16,16 +16,37 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', 'ProductController@getProducts' )->name('index');
-Route::get('/picadas', 'ProductController@getPicadas' )->name('picadas');
-Route::get('/productos', 'ProductController@getProductos' )->name('productos');
+Route::get('/', function() {
+    return view('index');
+} )->name('index');
+
+Route::get('/tienda', 'ProductController@getProducts' )->name('tienda');
+
+Route::get('/picadas/{id}', 'ProductController@getPicadas' )->name('picadas');
+
+Route::get('/productos/{id}', 'ProductController@getProductos' )->name('productos');
+
+
 Route::get('/agregar-al-carrito/{id}','ProductController@addToCart')->name('product.addtoCart');
+
+
+
+Route::get('/agregar-al-carrito-con-qty/{id}/{qty}','ProductController@addWithQty')->name('product.addWithQty');
+
+
+
+
+
 Route::get('/reducir-del-carrito/{id}','ProductController@reduceOne')->name('product.reduceCart');
+
 Route::get('/borrar-del-carrito/{id}','ProductController@delete')->name('product.deleteCart');
+
 Route::get('/carrito','ProductController@cart')->name('cart');
+
 Route::get('quienes-somos', function(){
     return view('quienes-somos'); })->name('quienes-somos');
-    Route::get('contacto', function(){
+
+Route::get('contacto', function(){
         return view('contacto'); })->name('contacto');
     
 // Route::get('/carrito', function(){

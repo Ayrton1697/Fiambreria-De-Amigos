@@ -1,5 +1,5 @@
 .footer{
-    background-color: $color-grey-dark-3;
+    background-color: #f4efdf;
     padding: 10rem 0;
     font-size: 1.4rem;
 
@@ -7,6 +7,11 @@
         border-top: 1px solid #ccc;
         padding-top: 2rem;
         display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+            text-align: center;
+        }
 
     }
     &__list{
@@ -21,7 +26,7 @@
     }
     &__link{
         &:link,&:visited{
-            color: $color-grey;
+            color:#5f5a5a;
             text-decoration: none;
             text-transform: uppercase;
             display: inline-block;

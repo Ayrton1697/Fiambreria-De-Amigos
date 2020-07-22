@@ -27,10 +27,22 @@
     &--tienda{
         font-size: 1rem;
         padding: 1.5rem 3rem;
+
+        @include respond(phone){
+            width: 50%;
+        }
     }
 
-
+    &--pedido{
+        border-radius: 0;
+        letter-spacing: .2rem;
+        color: white;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        border: 1px solid white;
+    }
 }
 .flecha{
     padding: 0rem 1rem;
+    
 }

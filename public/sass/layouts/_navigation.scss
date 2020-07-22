@@ -35,7 +35,7 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image:radial-gradient($color-primary-light, $color-primary-dark);
+        background-image:radial-gradient($color-light, $color-light-dark);
         z-index: 1000;
         transition: transform .8s;
 
@@ -52,7 +52,7 @@
 
     &-nav{
         text-transform: uppercase;
-        background-color: #dac3c3;
+        background-color: $color-light;
         text-align: center;
         margin: 0 auto;
         transition:  .3s;
@@ -68,11 +68,11 @@
         transition: 1s;
      list-style: none;
      @include respond(tab-port){
-         position: absolute;
+         position: fixed;
          top: 50%;
          left: 50%;
          z-index: 10000000000;
-         transform: translateY(-50%);
+         transform: translate(-50%, -50%);
     }
 }
     &__item{
@@ -86,10 +86,10 @@
 
         &:hover{
          
-            background-color: #dfb3b3;
+            background-color: $color-light-dark;
         }
         &:hover .navigation__link{
-            color: #9d2929;
+            color: #6e481c;
         }
 
         &--right{
@@ -100,7 +100,7 @@
 
             .cart__qty{
                 font-size: 1.3rem;
-                background-color: #a77272;
+                background-color: #baa763;
                 border-radius: 9rem;
                 color: white;
                 position: absolute;
@@ -110,15 +110,16 @@
 
 
                 @include respond(tab-port){
-                    right: 30%;
+                    right: 38%;
                     top: 0%;
-                    width: 18%;
+                    width: 11%;
                 }
             }
 
             @include respond(tab-port){
                 padding: 0;
                 float: none;
+                margin: 0 auto;
             }
         }
 
@@ -127,13 +128,13 @@
             transition: all .2s;
             cursor: pointer;
             /* display: none; */
-            transform: translate(-50%,-50%)
+            
         }
     }
     
  
     &__link{
-        color: #865959;
+        color: #4d3f3f;
         text-decoration: none;
         font-size: 1.5rem;
 

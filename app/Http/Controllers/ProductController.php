@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function getProducts(){
 
-        $productos= Product::where('tipo',2)->get();
+        $productos= Product::All();
 
         // foreach($productos as $products){
         //     echo $products;
@@ -21,14 +21,14 @@ class ProductController extends Controller
         // }
     
         
-     return view('index', ['products' => $productos]);
+     return view('tienda', ['productos' => $productos]);
 
     }
 
-    public function getPicadas(){
+    public function getPicadas($id){
 
-        $productos= Product::where('tipo',1)->get();
-
+       $productos= Product::where('tipo',$id)->get();
+        
         // foreach($picadas as $picada){
         //     echo $picada;
         //     echo "</br>";
@@ -38,9 +38,9 @@ class ProductController extends Controller
         return view('picadas', ['productos' => $productos]);
     }
 
-    public function getProductos(){
+    public function getProductos($id){
 
-        $productos = Product::where('tipo', 2)->get();
+        $productos = Product::where('tipo', $id)->get();
 
         return view('productos', ['productos' => $productos]);
 
@@ -57,6 +57,25 @@ class ProductController extends Controller
 
         $cart= new Cart($oldCart);
         $cart->add($product, $product->id);
+        
+        
+
+        $request->session()->put('cart', $cart);
+        return back();
+
+    }
+    
+    public function addWithQty(Request $request, $id, $qty){
+
+        $product= Product::find($id);
+        
+        // session()->flush();
+
+        $oldCart= Session::has('cart') ? Session::get('cart') : null;
+        
+
+        $cart= new Cart($oldCart);
+        $cart->addWithQty($product, $product->id, $qty);
         
         
 

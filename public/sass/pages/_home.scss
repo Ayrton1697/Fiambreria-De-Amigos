@@ -5,23 +5,16 @@
 }
 
 .section-ofertas{
-    padding: 18rem 0 105rem 0;
+    padding: 18rem 0 20rem 0;
     background-color:#f7f7f7;
     
-
-    @include respond (phone){
-        padding: 18rem 0 95rem 0;
-    }
-    @include respond(xs-phone){
-        padding: 18rem 0 65rem 0;
-    }
 }
 
 
 .section-destacados{
-    margin-top: -17rem;
+    margin-top: -19rem;
     padding: 25rem 0 24rem 0;
-    background-color: rgb(218, 195, 195);
+    background-color: #f4efdf;
     clip-path: polygon(0 0, 100% 15%, 100% 85%,0 100%);
 
     @include respond(tab-port){

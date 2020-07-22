@@ -37,6 +37,7 @@
 
         @include respond(phone){
             padding: 0.5rem;
+            font-size: 1.1rem;
         }
     }
     &__name{
@@ -58,11 +59,9 @@
     }
     &__precio{
         display: inline;
-        padding-left: 10rem;
+        
 
-        @include respond(phone){
-            padding-left: 7rem;
-        }
+     
    
     }
     &__cantidad{
@@ -102,25 +101,6 @@
 
 }
 
-.btn--carrito{
-    text-decoration: none;
-    color: white;
-    margin: 0;
-    font-size: 3rem;
-    position: absolute;
-    top: 30%;
-    left: 60%;
-    margin-left: 3rem;
-
-        &-more{
-            margin: 0;
-            left: 70%;
-        }
-        &-less{
-            margin: 0;
-            left: 100%;
-        }
-}
 
 .carrito__box{
     
@@ -157,5 +137,25 @@
         right: 0;
         top: 0;
      
+    }
+}
+
+.carrito__img{
+
+        position: absolute;
+        left: 90%;
+        width: 1.7rem;
+
+    &--more{
+        transform: rotate(-90deg);
+        
+    }
+    &--less{
+        transform: rotate(-90deg);
+        top:75%;
+
+        @include respond(phone){
+            top: 100%;
+        }
     }
 }

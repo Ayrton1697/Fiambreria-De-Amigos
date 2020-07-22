@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../public/images/FAVICON.png" >
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/3e89adbc58.js" crossorigin="anonymous"></script>
    
-    <link rel="stylesheet" type="" href="css/ecommerce-styles.css">
+    <link rel="stylesheet" type="" href="{{ asset('css/ecommerce-styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-    <title>Document</title>
+    <title>De Amigos Fiambreria: Picadas, Fiambres, Pastas, Almacén y más  </title>
 </head>
 <body>
 
@@ -31,11 +32,13 @@
 
             <ul class="navigation__list">
 
-                <li class="navigation__item"><a href="{{route('index')}}" class="navigation__link">Inicio</a></li>
-                <li class="navigation__item"><a href="{{route('quienes-somos')}}" class="navigation__link">Quienes somos</a></li>
-                <li class="navigation__item"><a href="{{route('productos')}}" class="navigation__link">Productos</a></li>
-                <li class="navigation__item"><a href="{{route('picadas')}}" class="navigation__link">Picadas</a></li>
-                <li class="navigation__item"><a href="{{route('contacto')}}" class="navigation__link">Contacto</a></li>
+                <a href="{{route('index')}}" class="navigation__link"> <li class="navigation__item">Inicio</li></a>
+                <a href="{{route('quienes-somos')}}" class="navigation__link"> <li class="navigation__item">Quienes somos</li></a>
+                <a href="{{ route('productos', ['id'=> 2] ) }} " class="navigation__link"><li class="navigation__item">Fiambres</li></a>
+                <a href="{{ route('productos', ['id'=> 3] ) }} " class="navigation__link"> <li class="navigation__item">Almacén</li></a>
+                <a href="{{ route('productos', ['id'=> 4] ) }} " class="navigation__link"> <li class="navigation__item">Pastas</li></a>
+                <a href="{{route('picadas', ['id' => 1])}}" class="navigation__link"> <li class="navigation__item">Picadas</li></a>
+                <a href="{{route('contacto')}}" class="navigation__link"><li class="navigation__item">Contacto</li></a>
 
                     <li class="navigation__item navigation__item--right">
                         <a href="{{route('cart')}}" class="navigation__link">
@@ -62,10 +65,15 @@
                             <!-- <img class="slider__image slider__image--1" src="../public/images/slider1.jpg" > -->
                             <div class="slider__image slider__image--1"></div>
                             <div class="header__text">
-                                <h1 class="heading-primary heading-primary--1">
+                            <img src="../public/images/logo.png" class="header__text--logo" alt="">
+
+                              <div class="u-center-text u-margin-top-big">
+                              <a href="#productos-principales" class="btn btn--pedido">Hacé tu pedido</a>
+                              </div>
+                                <!-- <h1 class="heading-primary heading-primary--1">
                                     <span class="heading-primary--big">DE AMIGOS</span> 
                                     <span class="heading-primary--small">Productos frescos de calidad</span>   
-                                </h1>
+                                </h1> -->
                             </div>
                     </div>
                  
@@ -73,10 +81,7 @@
                             <!-- <img class="slider__image slider__image--2" src="../public/images/picada1.jpg" > -->
                             <div class=" slider__image slider__image--2"></div>
                             <div class="header__text">
-                                <h1 class="heading-primary heading-primary--2">
-                                    <span class="heading-primary--big">PICADAS</span> 
-                                    <span class="heading-primary--small">Para toda la familia</span>  
-                                </h1>
+                                <img src="../public/images/QUESOSYFIAMBRES.png" class="header__text--logo--2" alt="">
                             </div>
                     </div>
                         
@@ -84,10 +89,7 @@
                             <!-- <img class="slider__image slider__image--3" src="../public/images/picada2.jpg" > -->
                             <div class=" slider__image slider__image--3"></div>
                             <div class="header__text">
-                                <h1 class="heading-primary heading-primary--3">
-                                    <span class="heading-primary--big">QUESOS Y FIAMBRES</span> 
-                                    <span class="heading-primary--small">100% FRESCOS</span>  
-                                </h1>
+                                <img src="../public/images/picadasfamilia.png" class="header__text--logo--2" alt="">
                             </div>
                     </div>
                     
@@ -148,15 +150,10 @@
             <div class="oferta">
                     <div class="card-oferta card-oferta--1">
                         <div class="card-oferta__picture card-oferta__picture--1">
-                            
+                             <img src="../public/images/descuento.png"  class="card-oferta__promos card-oferta__promos--1" alt="">
                         </div>
-                        <h4 class="card-oferta__heading">
-                            <span class="card-oferta__heading-span card-oferta__heading-span--1">
-                                    20% De descuento pagando en efectivo
-                            </span>
-                            
-                        </h4>
                 
+                  
                     </div>
             </div>
         </div>
@@ -164,14 +161,9 @@
             <div class="oferta">
                 <div class="card-oferta card-oferta--2">
                     <div class="card-oferta__picture card-oferta__picture--2">
-                     
+                      <img src="../public/images/bancociudad.png"  class="card-oferta__promos card-oferta__promos--1" alt="">
                     </div>
-                    <h4 class="card-oferta__heading">
-                        <span class="card-oferta__heading-span card-oferta__heading-span--2">
-                                40% De descuento con Banco Francés
-                        </span>
-                        
-                    </h4>
+                   
                
                 </div>
             </div>
@@ -185,11 +177,11 @@
 
    </section>
 
-   <section class="section-destacados">
+   <section class="section-destacados" >
        <div class="u-center-text">
-            <h2 class="heading-secondary">Nuestros productos principales</h2>
+            <h2 class="heading-secondary" id="productos-principales">Nuestros productos</h2>
        </div>
-       <div class="productos-principales">
+       <div class="productos-principales" >
            <div class="row">
                <div class="col-1-of-3">
                 
@@ -199,13 +191,18 @@
                             <img src="../public/images/fideos1.jpg" alt="" class="card__image  ">
                             </figure>
 
-                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Pastas caseras</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Pastas</h3>
                             <p class="card__text u-margin-top-small">
                                     Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Quidem deserunt
                                     quis sed officia doloribus quam excepturi dicta i
                                 
                                 </p>
+
+                                <div class="u-center-text u-margin-top-small">
+                                    <a href="{{ route('productos', ['id'=> 4] ) }} " class="btn btn--tienda btn--beige ">Ver todas</a>
+           
+                                </div>
                         </div>
 
 
@@ -218,13 +215,17 @@
                             <img src="../public/images/slider1.jpg" alt="" class="card__image ">
                              </figure>
 
-                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Jamon Iberico</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Fiambres</h3>
                             <p class="card__text u-margin-top-small">
                                     Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Quidem deserunt
                                     quis sed officia doloribus quam excepturi dicta i
                                 
                                 </p>
+                                <div class="u-center-text u-margin-top-small">
+                                    <a href="{{ route('productos', ['id'=> 2] ) }} " class="btn btn--tienda btn--beige ">Ver todos</a>
+           
+                                </div>
                         </div>
                </div>
                <div class="col-1-of-3">
@@ -235,20 +236,24 @@
                             <img src="../public/images/vinos1.jpg" alt="" class="card__image ">
                              </figure>
 
-                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Vinos artesanales</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-medium u-margin-top-small">Almacén</h3>
                             <p class="card__text u-margin-top-small">
                                     Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Quidem deserunt
                                     quis sed officia doloribus quam excepturi dicta i
                                 
                                 </p>
+                                <div class="u-center-text u-margin-top-small">
+                                    <a href="{{ route('productos', ['id'=> 3] ) }}" class="btn btn--tienda btn--beige ">Ver todos</a>
+           
+                                </div> 
                 </div>
 
                </div>
            </div>
 
            <div class="u-center-text u-margin-top-big">
-            <a href="{{route('productos')}}" class="btn btn--beige">Ver todos</a>
+            
             
             </div>
        </div>
@@ -315,12 +320,13 @@
              </div>
 
             </div>
+            
         </div>
-
         <div class="u-center-text u-margin-top-small">
-         <a href="{{route('picadas')}}" class="btn btn--beige">Ver todas</a>
-         
-         </div>
+            <a href="{{route('picadas', ['id' => 1])}}" class="btn btn--beige ">Ver todas</a>
+
+        </div>
+   
     </div>
    
 </section>
@@ -342,8 +348,13 @@
                  <a href="" class="footer__link"> &#169 De Amigos</a>
                 </p>
                 <p class="footer__copyright">
-                    Built by <a href="" class="footer__link">ASWEB</a>
+                    Built by <a href="" class="footer__link">Emfes Marketing</a>
                 </p>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="" class="footer__link"><i class="fa fa-instagram "></i></a></li>
+                    <li class="footer__item"><a href="" class="footer__link"><i class="fa fa-facebook "></i></a></li>
+                
+                </ul>
             </div>
         </div>
     </footer>

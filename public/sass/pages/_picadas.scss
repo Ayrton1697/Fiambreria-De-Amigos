@@ -14,6 +14,7 @@
     position: relative;
 
     &--text{
+        text-align: center;
         position: absolute;
         top:50%;
         left: 50%;
@@ -29,23 +30,23 @@
     &--picadas{
         background-image: linear-gradient(
             to right,
-            rgba($color-primary-light, 0.76),
-            rgba($color-primary-dark, 0.719)
+            rgba($color-light, 0.76),
+            rgba($color-light-dark, 0.719)
         ),
-        url(../images/vinos1.jpg);
+        url(../images/picada1.jpg);
     }
 
     &--productos{
         background-image: linear-gradient(
             to right,
-            rgba($color-primary-light, 0.76),
-            rgba($color-primary-dark, 0.719)
+            rgba($color-light, 0.76),
+            rgba($color-light-dark, 0.719)
         ),
         url(../images/fideos1.jpg);
     }
 }
 
 .store-picadas{
-    background-color: #dac7c7;
+    background-color:$color-white;
 
 }

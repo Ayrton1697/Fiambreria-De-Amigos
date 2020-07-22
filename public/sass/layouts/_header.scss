@@ -5,6 +5,7 @@
 
     &__text{
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -23,6 +24,18 @@
     &--3{
 
     }
+    &--logo{
+        width: 45%;
+
+        @include respond(phone){
+            width: 65%;
+        }
+
+        &--2{
+            width: 70%;
+        }
     }
+    }
+
   
 }

@@ -49,7 +49,35 @@ class Cart
             $storedItem['price']= $item->price *  $storedItem['qty'];
             $this->items[$id]= $storedItem;
             $this->totalQty++;
-            $this->totalPrice+= $this->items[$id]['price'];
+            $this->totalPrice+= $item->price;
+    }
+
+    public function addWithQty($item, $id, $qty){
+
+        $storedItem=[
+            'qty'=> 0,
+            'price'=>$item->price,
+            'item'=>$item
+        ];
+        
+            if($this->items){
+                if(array_key_exists($id, $this->items)){
+                    $storedItem= $this->items[$id];
+                     }
+            }
+            
+          
+            //   unset($this->items);
+            //    unset($storedItem);
+            //    session_unset();
+              //dd($this->items);
+            //   dd($storedItem);
+
+            $storedItem['qty']=$qty;
+            $storedItem['price']= $item->price *  $storedItem['qty'];
+            $this->items[$id]= $storedItem;
+            $this->totalQty+=$storedItem['qty'];
+            $this->totalPrice+= $item->price;
     }
 
     public function reduce($item , $id){
@@ -71,7 +99,7 @@ class Cart
             $storedItem['price']= $item->price *  $storedItem['qty'];
             $this->items[$id]= $storedItem;
             $this->totalQty--;
-            $this->totalPrice+= $this->items[$id]['price'];
+            $this->totalPrice-= $item->price;
         }
         elseif($storedItem['qty']==1){
 
@@ -80,7 +108,7 @@ class Cart
 
             unset($this->items[$id]);
              $this->totalQty--;
-             //$this->totalPrice+= $this->items[$id]['price'];
+             $this->totalPrice-= $item->price;
         }
 
      
@@ -100,9 +128,10 @@ class Cart
                 $storedItem= $this->items[$id];
                  }
         }
+        $this->totalPrice-= $this->items[$id]['price'];
         unset($this->items[$id]);
         $this->totalQty--;
-
+    
     }
 
 

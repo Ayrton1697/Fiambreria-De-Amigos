@@ -61,7 +61,7 @@
     
         &-right{
             position: absolute;
-            background-color: rgba(white, 0.6);
+           color: white;
             top: 50%;
             right:0;
             font-size: 3rem;
@@ -79,7 +79,7 @@
             top: 50%;
             left: 0;
             font-size: 3rem;
-            background-color: rgba(white, 0.6);
+            color: white;
             cursor: pointer;
             transition: all .2s;
 

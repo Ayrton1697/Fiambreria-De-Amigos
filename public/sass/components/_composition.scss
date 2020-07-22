@@ -7,7 +7,6 @@
 
         width: 55%;
         position: absolute;
-        box-shadow: 0 1.5rem 4rem rgba(black, 0.5);
         border-radius: 2px;
         transition: all .2s;
         &--1{
@@ -25,7 +24,7 @@
             outline: .25rem solid #865959;
             outline-offset: 1.2rem;
             transform: scale(1.1) translateY(5px);
-           box-shadow: 0 3rem 3rem rgba(black, 0.5);
+
         }
     }
 
